@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    /* the * applies to all elements on the page */
+    /* border-box means that padding and border are removed from total width & height of elements. 
+    Usually padding and border add width/height to an element which is causes unexpected layouts*/
+}
+
+body {
+    margin: 0; /* this removes the browser's default margin */
+    display: flex; /* turns on the flex container which is standard practice */
+    justify-content: center;
+    /* centers the content on the main axis. Since we haven't declared flex direction as column this means 
+    the main axis is the horizontal axis */
+    align-items: center;
+    /* this aligns items on the cross axis, since the flex direction is default or row this means the cross axis is the vertical axis */
+    background-color: whitesmoke;
+    /* determines the background color of the body */
+    height: 100vh;
+    /* this means the body will take up 100% of the the screen or the full viewport height */
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    /* this sets the default font as Arial and if that's not available on a browser for some reason it'll move to Helvetica */
+}
+
+.container {
+    display: flex;
+     /* turns on flexbox for this element */
+    flex-direction: column;
+    /* declares the flex direction as column which is different from the default of row */
+    justify-content: center;
+    /* centers the content in the flex direction which is column so centers content vertically */
+    
+    /* the width settings make the container responsive to different sizes */
+    min-width: 300px; 
+    /* this ensures the container won't shrink smaller than 300px in width*/
+    width: 90%;
+    /* this sets the width of the container to 90% of the parent container. If you check dev tools you'll see the container takes up 90% of the body*/
+    max-width: 600px;
+    /* this sets the maximum width of the container to 600px */
+
+    background-color: #ffffff;
+    /* sets the background color of the container to white */
+    padding: 20px;
+    /* adds 20px of space on all sides of the inside of the container */
+    margin: 50px;
+    /* adds 50px of space on all sides of the outside of the container */
+    border-radius: 10px;
+    /* rounds the corners of the container with a 10px radius */
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+    /* adds a box-shadow to the container with a 1px x-offset which means to the right and a 1 px y-offset which means down and a 20px blur radius.
+    and the rgba makes the shadow black with a 50% opacity */
+}
+
+.header {
+    text-align: center;
+    /* aligns the text in the center of the header element */
+    color: black;
+    /* sets the color of the header text to black */
+}
+
+.header:hover {
+    cursor: default;
+    /* turns off the cursor so it doesn't change to the default cursor when you hover over text */
+}
+
+.input-container {
+    display: flex;
+    /* turns on flexbox */
+    position: relative;
+    /* position is set to relative so that when the .inputcontainer button class is set to absolute this will be the parent */
+    width: 100%;
+    /* sets width to 100% of the .div container */
+    height: 50px;
+    /* sets the input container height to 50px */
+    border-radius: 200px;
+    /* sets the border radius to 100px for the input container */
+    margin-bottom: 20px;
+    /* adds 20px of margin to the bottom of the input container */
+}
+
+.input-container input {
+    width: 100%;
+    /* sets the width of the input container to be 100% of input container */
+    border: none;
+    /* removes the border from the input field */
+    background-color: #edeef0;
+    /* sets the background color of the input field */
+    padding-left: 15px;
+    /* adds padding to the start of the text in the input field */
+    border-radius: 10px;
+    /* sets the border radius to the same px as the container */
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+}
+
+.input-container input:focus {
+    outline: none;
+    /* removes the default outline when the input is focused */
+}
+
+.input-container button {
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin-left: 10px;
+    width: 25%;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+}
+
+.input-container button:hover {
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    /* sets the x direction shadow to 1px to the right and y direction 1px down and blur radius to 10px rgba sets the color and the .03 sets the opacity */
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    transition: all 0.2s ease-in-out;
+}
+
+#tasks {
+    /* using a # to select #tasks because it's an id not a class */
+   display: flex;
+   /* adds flexbox */
+   flex-direction: column;
+   /* sets flex direction to column instead of the default row */
+   list-style: none;
+    /* removes the bullet points from the list */
+   padding: 0;
+   margin: 0; 
+}
+
+.task-item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    /* evenly spaces all items in the .task-item in a row */
+    align-items: center;
+    /* centers items vertically */
+    padding: 10px;
+}
+
+.task-item .checkbox-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid #000;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+

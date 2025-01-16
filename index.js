@@ -63,6 +63,13 @@ function addToList() {
         // Creates a CSS class for the checkbox
         checkbox.className = 'checkbox-btn';
 
+        // Variable that creates a close button for each list item
+        const closeButton = document.createElement('button');
+        // Sets the text of the close button to 'X'
+        closeButton.textContent = 'X';
+        // Creates a CSS class for the close button
+        closeButton.className = 'close-btn';
+
         // Adds a strikethrough to the span text if the checkbox is clicked
         checkbox.addEventListener('click', () => {
             if (checkbox.checked) {
@@ -76,8 +83,15 @@ function addToList() {
         listItem.appendChild(checkbox);
         // Actually adds the span to the list item
         listItem.appendChild(span);
+        // Actually adds the close button to the list item
+        listItem.appendChild(closeButton);
         // Adds the list item to the task list
         taskList.appendChild(listItem);
+
+        // adds an event listener to the closeButton that removes the listItem from the parent which is taskList
+        closeButton.addEventListener('click', () => {
+            taskList.removeChild(listItem);
+        });
 
         // Clears the input field after the task is added
         newTask.value = '';
