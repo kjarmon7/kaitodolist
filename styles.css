@@ -32,7 +32,7 @@ body {
     /* the width settings make the container responsive to different sizes */
     min-width: 300px; 
     /* this ensures the container won't shrink smaller than 300px in width*/
-    width: 70%;
+    width: 90%;
     /* this sets the width of the container to 90% of the parent container. If you check dev tools you'll see the container takes up 90% of the body*/
     max-width: 600px;
     /* this sets the maximum width of the container to 600px */
@@ -41,7 +41,7 @@ body {
     /* sets the background color of the container to white */
     padding: 20px;
     /* adds 20px of space on all sides of the inside of the container */
-    margin: 50px;
+    margin: 100px;
     /* adds 50px of space on all sides of the outside of the container */
     border-radius: 10px;
     /* rounds the corners of the container with a 10px radius */
@@ -154,7 +154,7 @@ body {
     font-family: 'Courier New', Courier, monospace, sans-serif;
 }
 
-.task-item .checkbox-btn {
+.checkbox-btn {
     width: 15px;
     height: 15px;
     cursor: pointer;
@@ -163,13 +163,33 @@ body {
     justify-content: center;
     position: absolute;
     padding: 10px;
-    border-radius: 15px;
-    border: 2px solid #000;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
-    color: white;
+    border: none;
+    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
+    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
+    border-radius: 5px;
     transition: all 0.3s ease-in-out;
-    accent-color: black;
+    -webkit-appearance: none; /* Removes default styling in WebKit browsers */
+    -moz-appearance: none; /* Removes default styling in Firefox */
+    appearance: none; /* Removes default styling in other browsers */
+}
+
+.checkbox-btn::after {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 10px;
+    border: none;
+    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
+    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    -webkit-appearance: none; /* Removes default styling in WebKit browsers */
+    -moz-appearance: none; /* Removes default styling in Firefox */
+    appearance: none; /* Removes default styling in other browsers */
 }
 
 .task-item:hover {
