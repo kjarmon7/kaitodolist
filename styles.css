@@ -13,7 +13,7 @@ body {
     the main axis is the horizontal axis */
     align-items: center;
     /* this aligns items on the cross axis, since the flex direction is default or row this means the cross axis is the vertical axis */
-    background-color: whitesmoke;
+    background-color: #e6e6e6;
     /* determines the background color of the body */
     height: 100vh;
     /* this means the body will take up 100% of the the screen or the full viewport height */
@@ -32,12 +32,12 @@ body {
     /* the width settings make the container responsive to different sizes */
     min-width: 300px; 
     /* this ensures the container won't shrink smaller than 300px in width*/
-    width: 90%;
+    width: 70%;
     /* this sets the width of the container to 90% of the parent container. If you check dev tools you'll see the container takes up 90% of the body*/
     max-width: 600px;
     /* this sets the maximum width of the container to 600px */
-
-    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    background-color: #e6e6e6;
     /* sets the background color of the container to white */
     padding: 20px;
     /* adds 20px of space on all sides of the inside of the container */
@@ -45,9 +45,7 @@ body {
     /* adds 50px of space on all sides of the outside of the container */
     border-radius: 10px;
     /* rounds the corners of the container with a 10px radius */
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
-    /* adds a box-shadow to the container with a 1px x-offset which means to the right and a 1 px y-offset which means down and a 20px blur radius.
-    and the rgba makes the shadow black with a 50% opacity */
+    box-shadow: -13px 13px 25px #7c7c7c, 13px -13px 25px #ffffff;
 }
 
 .header {
@@ -80,15 +78,15 @@ body {
 .input-container input {
     width: 100%;
     /* sets the width of the input container to be 100% of input container */
-    border: none;
-    /* removes the border from the input field */
-    background-color: #edeef0;
+    border: 1px solid #e6e6e6;
+    background-color: #e6e6e6;
     /* sets the background color of the input field */
     padding-left: 15px;
     /* adds padding to the start of the text in the input field */
     border-radius: 10px;
     /* sets the border radius to the same px as the container */
     font-family: 'Courier New', Courier, monospace, sans-serif;
+    box-shadow: inset -4px 4px 8px #c6c6c6, inset 4px -4px 8px #ffffff;
 }
 
 .input-container input:focus {
@@ -98,19 +96,21 @@ body {
 
 .input-container button {
     border-radius: 10px;
-    border: none;
-    color: white;
-    margin-left: 10px;
+    color: black;
+    margin-left: 30px;
     width: 25%;
-    background-color: rgb(0, 0, 0);
+    border: none;
+    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
+    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
     font-family: 'Courier New', Courier, monospace, sans-serif;
 }
 
 .input-container button:hover {
     cursor: pointer;
-    background-color: whitesmoke;
+    border: none;
+    background-color: #e6e6e6;
+    box-shadow: inset -4px 4px 8px #c6c6c6, inset 4px -4px 8px #ffffff;
     color: black;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     /* sets the x direction shadow to 1px to the right and y direction 1px down and blur radius to 10px rgba sets the color and the .03 sets the opacity */
     font-family: 'Courier New', Courier, monospace, sans-serif;
     transition: all 0.2s ease-in-out;
@@ -135,10 +135,28 @@ body {
     /* evenly spaces all items in the .task-item in a row */
     align-items: center;
     /* centers items vertically */
-    padding: 10px;
+    padding: 15px;
+    border: none;
+    background-color: #e6e6e6;
+    box-shadow: inset -4px 4px 8px #c6c6c6, inset 4px -4px 8px #ffffff;
+    margin: 5px 0;
+    border-radius: 10px;
+    .material-symbols-outlined {
+        display: none;
+        border-radius: 5px;
+    }
+}
+
+.text {
+    margin: 3px 10px 3px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
 }
 
 .task-item .checkbox-btn {
+    width: 15px;
+    height: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -147,9 +165,50 @@ body {
     padding: 10px;
     border-radius: 15px;
     border: 2px solid #000;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     color: white;
     transition: all 0.3s ease-in-out;
+    accent-color: black;
 }
+
+.task-item:hover {
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
+    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
+    transition: all 0.3s ease-in-out;
+    .material-symbols-outlined {
+        display: block;
+    }
+}
+
+.material-symbols-outlined:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+#clear-btn {
+    border: none;
+    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
+    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
+    color: black;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+}
+
+#clear-btn:hover {
+    cursor: pointer;
+    border: none;
+    background-color: #e6e6e6;
+    box-shadow: inset -4px 4px 8px #c6c6c6, inset 4px -4px 8px #ffffff;
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+
 

@@ -64,11 +64,9 @@ function addToList() {
         checkbox.className = 'checkbox-btn';
 
         // Variable that creates a close button for each list item
-        const closeButton = document.createElement('button');
-        // Sets the text of the close button to 'X'
-        closeButton.textContent = 'X';
-        // Creates a CSS class for the close button
-        closeButton.className = 'close-btn';
+        const closeButton = document.createElement('span');
+        closeButton.className = 'material-symbols-outlined';
+        closeButton.textContent = 'remove';
 
         // Adds a strikethrough to the span text if the checkbox is clicked
         checkbox.addEventListener('click', () => {
@@ -76,6 +74,18 @@ function addToList() {
                 span.style.textDecoration = 'line-through';
             } else {
                 span.style.textDecoration = 'none';
+            }
+        });
+
+        // Adds a strikethrough to the span text if the list item is clicked
+        listItem.addEventListener('click', () => {
+            listItem.clicked = !listItem.clicked;
+            if (listItem.clicked) {
+                span.style.textDecoration = 'line-through';
+                checkbox.checked = true;
+            } else {
+                span.style.textDecoration = 'none';
+                checkbox.checked = false;
             }
         });
 
