@@ -20,7 +20,7 @@ body {
     width: 90%;
     max-width: 600px;
     background-color: #e6e6e6;
-    padding: 50px 20px;
+    padding: 40px 20px;
     margin: 100px;
     border: 1px solid #e6e6e6;
     border-radius: 25px;
@@ -98,7 +98,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 10px 0px;
+    margin: 8px 0px;
     padding: 13px;
     color: black;
     border-radius: 10px;
@@ -115,6 +115,7 @@ body {
 
 .text {
     margin: 3px 10px;
+    padding: 2px 0px;
     font-size: 13px;
     color: dark grey;
     font-weight: 400;
@@ -145,7 +146,6 @@ body {
     .material-symbols-outlined {
         display: block;
         color: grey;
-        /* background-color: #e6e6e6; */
         box-shadow:  -4px 4px 10px #b6b6b6, 4px -4px 10px #ffffff;
         transition: all 0.2s ease-out;
     }
