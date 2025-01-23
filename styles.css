@@ -1,129 +1,94 @@
 * {
     box-sizing: border-box;
-    /* the * applies to all elements on the page */
-    /* border-box means that padding and border are removed from total width & height of elements. 
-    Usually padding and border add width/height to an element which is causes unexpected layouts*/
 }
 
 body {
-    margin: 0; /* this removes the browser's default margin */
-    display: flex; /* turns on the flex container which is standard practice */
+    font-family: 'Inter', sans-serif;
+    margin: 0; 
+    display: flex; 
     justify-content: center;
-    /* centers the content on the main axis. Since we haven't declared flex direction as column this means 
-    the main axis is the horizontal axis */
     align-items: center;
-    /* this aligns items on the cross axis, since the flex direction is default or row this means the cross axis is the vertical axis */
     background-color: #e6e6e6;
-    /* determines the background color of the body */
     height: 100vh;
-    /* this means the body will take up 100% of the the screen or the full viewport height */
-    font-family: 'Courier New', Courier, monospace, sans-serif;
-    /* this sets the default font as Arial and if that's not available on a browser for some reason it'll move to Helvetica */
-}
+    }
 
 .container {
     display: flex;
-     /* turns on flexbox for this element */
     flex-direction: column;
-    /* declares the flex direction as column which is different from the default of row */
     justify-content: center;
-    /* centers the content in the flex direction which is column so centers content vertically */
-    
-    /* the width settings make the container responsive to different sizes */
     min-width: 300px; 
-    /* this ensures the container won't shrink smaller than 300px in width*/
     width: 90%;
-    /* this sets the width of the container to 90% of the parent container. If you check dev tools you'll see the container takes up 90% of the body*/
     max-width: 600px;
-    /* this sets the maximum width of the container to 600px */
-    border: 1px solid #e6e6e6;
     background-color: #e6e6e6;
-    /* sets the background color of the container to white */
-    padding: 20px;
-    /* adds 20px of space on all sides of the inside of the container */
+    padding: 50px 20px;
     margin: 100px;
-    /* adds 50px of space on all sides of the outside of the container */
-    border-radius: 10px;
-    /* rounds the corners of the container with a 10px radius */
-    box-shadow: -13px 13px 25px #7c7c7c, 13px -13px 25px #ffffff;
+    border: 1px solid #e6e6e6;
+    border-radius: 25px;
+    box-shadow: -5px 5px 16px #a1a1a1, 5px -5px 16px #ffffff;
 }
 
 .header {
     text-align: center;
-    /* aligns the text in the center of the header element */
     color: black;
-    /* sets the color of the header text to black */
 }
 
 .header:hover {
     cursor: default;
-    /* turns off the cursor so it doesn't change to the default cursor when you hover over text */
 }
 
 .input-container {
     display: flex;
-    /* turns on flexbox */
     position: relative;
-    /* position is set to relative so that when the .inputcontainer button class is set to absolute this will be the parent */
     width: 100%;
-    /* sets width to 100% of the .div container */
     height: 50px;
-    /* sets the input container height to 50px */
     border-radius: 200px;
-    /* sets the border radius to 100px for the input container */
     margin-bottom: 20px;
-    /* adds 20px of margin to the bottom of the input container */
 }
 
 .input-container input {
     width: 100%;
-    /* sets the width of the input container to be 100% of input container */
+    padding-left: 15px;
+    border-radius: 10px;
+    font-family: 'Inter', Courier, monospace, sans-serif;
     border: 1px solid #e6e6e6;
     background-color: #e6e6e6;
-    /* sets the background color of the input field */
-    padding-left: 15px;
-    /* adds padding to the start of the text in the input field */
-    border-radius: 10px;
-    /* sets the border radius to the same px as the container */
-    font-family: 'Courier New', Courier, monospace, sans-serif;
-    box-shadow: inset -4px 4px 8px #c6c6c6, inset 4px -4px 8px #ffffff;
+    box-shadow: -8px 8px 16px #a1a1a1, 8px -8px 16px #ffffff;
+    transition: all 0.2s ease-out;
 }
 
 .input-container input:focus {
     outline: none;
-    /* removes the default outline when the input is focused */
+    box-shadow: -2px 2px 10px #a1a1a1, 2px -2px 10px #ffffff;
+    transition: all 0.2s ease-out;
 }
 
 .input-container button {
     border-radius: 10px;
-    color: black;
-    margin-left: 30px;
+    color: white;
+    margin-left: 15px;
     width: 25%;
     border: none;
-    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
-    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
-    font-family: 'Courier New', Courier, monospace, sans-serif;
+    background: linear-gradient(225deg, #588fff, #4a79e6);
+    box-shadow:  -8px 8px 16px #a1a1a1, 8px -8px 16px #ffffff;
+    font-family: 'Inter', Courier, monospace, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-out;
 }
 
 .input-container button:hover {
     cursor: pointer;
     border: none;
-    background-color: #e6e6e6;
-    box-shadow: inset -4px 4px 8px #c6c6c6, inset 4px -4px 8px #ffffff;
-    color: black;
-    /* sets the x direction shadow to 1px to the right and y direction 1px down and blur radius to 10px rgba sets the color and the .03 sets the opacity */
-    font-family: 'Courier New', Courier, monospace, sans-serif;
-    transition: all 0.2s ease-in-out;
+    background: linear-gradient(225deg, #4a79e6, #588fff);
+    box-shadow: -1px 1px 10px #a1a1a1, 1px -1px 10px #ffffff;
+    color: white;
+    font-family: 'Inter', Courier, monospace, sans-serif;
+    transition: all 0.2s ease-out;
 }
 
 #tasks {
-    /* using a # to select #tasks because it's an id not a class */
    display: flex;
-   /* adds flexbox */
    flex-direction: column;
-   /* sets flex direction to column instead of the default row */
    list-style: none;
-    /* removes the bullet points from the list */
    padding: 0;
    margin: 0; 
 }
@@ -132,15 +97,16 @@ body {
     position: relative;
     display: flex;
     justify-content: space-between;
-    /* evenly spaces all items in the .task-item in a row */
     align-items: center;
-    /* centers items vertically */
-    padding: 15px;
+    margin: 10px 0px;
+    padding: 13px;
+    color: black;
+    border-radius: 10px;
     border: none;
     background-color: #e6e6e6;
-    box-shadow: inset -4px 4px 8px #c6c6c6, inset 4px -4px 8px #ffffff;
-    margin: 5px 0;
-    border-radius: 10px;
+    box-shadow: -8px 8px 16px #a1a1a1, 8px -8px 16px #ffffff;;
+    transition: all 0.2s ease-out;
+
     .material-symbols-outlined {
         display: none;
         border-radius: 5px;
@@ -148,10 +114,12 @@ body {
 }
 
 .text {
-    margin: 3px 10px 3px 35px;
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Courier New', Courier, monospace, sans-serif;
+    margin: 3px 10px;
+    font-size: 13px;
+    color: dark grey;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-family: 'Inter', Courier, monospace, sans-serif;
 }
 
 .checkbox-btn {
@@ -162,73 +130,55 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    padding: 10px;
-    border: none;
-    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
-    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
+    box-shadow:  -4px 4px 10px #b6b6b6, 4px -4px 10px #ffffff;
     border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-    -webkit-appearance: none; /* Removes default styling in WebKit browsers */
-    -moz-appearance: none; /* Removes default styling in Firefox */
-    appearance: none; /* Removes default styling in other browsers */
-}
-
-.checkbox-btn::after {
-    width: 15px;
-    height: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    padding: 10px;
-    border: none;
-    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
-    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-    -webkit-appearance: none; /* Removes default styling in WebKit browsers */
-    -moz-appearance: none; /* Removes default styling in Firefox */
-    appearance: none; /* Removes default styling in other browsers */
+    border: 1px solid #c6c6c6;
+    transition: all 0.2s ease-out;
 }
 
 .task-item:hover {
     cursor: pointer;
     border: none;
-    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
-    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
-    transition: all 0.3s ease-in-out;
+    background: #e6e6e6;
+    box-shadow: -2px 2px 16px #a1a1a1, 2px -2px 16px #ffffff;;
+    transition: all 0.2s ease-out;
     .material-symbols-outlined {
         display: block;
+        color: grey;
+        /* background-color: #e6e6e6; */
+        box-shadow:  -4px 4px 10px #b6b6b6, 4px -4px 10px #ffffff;
+        transition: all 0.2s ease-out;
     }
 }
 
-.material-symbols-outlined:hover {
-    cursor: pointer;
-    background-color: black;
+.task-item:hover .material-symbols-outlined:hover {
+    cursor: pointer; 
     color: white;
-    transition: all 0.3s ease-in-out;
+    background-color: red;
+    transition: all 0.2s ease-out;
 }
 
 #clear-btn {
     border: none;
-    background: linear-gradient(225deg, #f6f6f6, #cfcfcf);
-    box-shadow:  -4px 4px 8px #b6b6b6, 4px -4px 8px #ffffff;
-    color: black;
+    background: linear-gradient(225deg, #d72929, #b52222);
+    box-shadow: -8px 8px 16px #a1a1a1, 8px -8px 16px #ffffff;;
+    color: white;
     border-radius: 10px;
     width: 100%;
-    padding: 15px;
+    padding: 17px;
     margin-top: 10px;
-    font-family: 'Courier New', Courier, monospace, sans-serif;
+    font-family: 'Inter', Courier, monospace, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-out;
 }
 
 #clear-btn:hover {
     cursor: pointer;
     border: none;
-    background-color: #e6e6e6;
-    box-shadow: inset -4px 4px 8px #c6c6c6, inset 4px -4px 8px #ffffff;
-    color: black;
-    transition: all 0.3s ease-in-out;
+    background: linear-gradient(225deg, #b52222, #d72929);
+    box-shadow: -1px 1px 10px #a1a1a1, 1px -1px 10px #ffffff;
+    color: white;
+    transition: all 0.2s ease-out;
 }
 
 
